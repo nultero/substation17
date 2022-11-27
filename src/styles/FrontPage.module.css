@@ -1,0 +1,116 @@
+@font-face {
+    font-family: "Droid";
+    src: url('../assets/fonts/Droid.otf');
+
+    font-family: "Righteous";
+    src: url('../assets/fonts/Righteous-Regular.ttf');
+
+    font-family: "Orbitron";
+    src: url('../assets/fonts/Orbitron-Regular.ttf');
+} 
+
+.centerer {
+  margin: 0 auto;
+  font-family: "Orbitron";
+  font-size: 24px;
+  margin: 25px;
+  display: flex;
+  justify-content: center;
+  color: cyan;
+}
+
+.pinned_div {
+  position: absolute;
+}
+
+.stationdiv {
+  position: relative;
+  animation-name: tiltspin;
+  animation-duration: 7s, 16s;
+  animation-iteration-count: infinite;
+  animation-delay: 0s;
+  animation-direction: alternate;
+}
+
+@keyframes tiltspin {
+  from {
+    transform: rotate(-11deg);
+  }
+  to {
+    transform: rotate(9deg);
+  }
+}
+
+.station {
+  position: relative;
+  height: 44rem;
+  width: 44rem;
+  content: url('../assets/expedition16.svg'); 
+  filter: invert(93%) sepia(70%) saturate(1592%) hue-rotate(116deg) brightness(50%) contrast(99%);
+}
+
+.stationtext {
+  position: relative;
+  height: 8rem;
+  width: 38rem;
+
+  top: -38rem;
+  right: -15rem;
+  z-index: 0;
+}
+
+/*
+  TODO: can the duplication below be removed?
+  currently doing it this way because
+  I can't figure out how to cleanly alter
+  the css at runtime
+
+  it ends up breaking just doing string manipulation
+  and I'm sure I'm missing a Solid primitive but bleh
+*/
+
+.stationtext2 {
+  position: relative;
+  background-color: black;
+  height: 8rem;
+  width: 26rem;
+
+  top: -43.2rem;
+  right: -10rem;
+  transform: perspective(160px) rotateX(-1.5deg) rotateY(7.5deg) rotateZ(1deg);
+
+  /* TODO border + haze ? */
+  border: 1px dotted rgb(69, 101, 119); 
+  box-shadow: -5px 5px 3px rgb(7, 56, 63);
+  z-index: 0;
+}
+
+.stationtext2red {
+  position: relative;
+  background-color: black;
+  height: 8rem;
+  width: 26rem;
+
+  top: -43.2rem;
+  right: -10rem;
+  transform: perspective(160px) rotateX(-1.5deg) rotateY(7.5deg) rotateZ(1deg);
+
+  /* TODO border + haze ? */
+  border: 1px dotted rgb(56, 0, 9); 
+  box-shadow: -5px 5px 3px rgb(146, 0, 0);
+  z-index: 0;
+}
+
+.stationtext2dark {
+  position: relative;
+  background-color: black;
+  height: 8rem;
+  width: 26rem;
+  top: -43.2rem;
+  right: -10rem;
+  transform: perspective(160px) rotateX(-1.5deg) rotateY(7.5deg) rotateZ(1deg);
+  border: 2px dotted rgb(43, 0, 43); 
+  box-shadow: -5px 5px 3px black;
+  z-index: 0;
+}
+
